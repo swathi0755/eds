@@ -1,0 +1,156 @@
+/* tabs.css */
+
+/* Variable Declarations */
+:root {
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+
+  --color-purple-50: #dcd0ff; /* Example value */
+  --color-dark-purple-200: #4b286d; /* Example value */
+  --color-grey-500: #999999; /* Example value */
+  --color-grey-600: #888888; /* Example value */
+
+  --system-color-link-visited: #5a67d8; /* Example value */
+  --system-color-link-hover: #4c51bf; /* Example value */
+  --system-color-link-dark-hover: #2c5282; /* Example value */
+  --system-color-link-dark-visited: #2a4365; /* Example value */
+
+  --system-color-dark-tertiary: #1a202c; /* Example value */
+  --system-white: #ffffff; /* Example value */
+  --white-color: #ffffff;
+  --black-color: #000000;
+}
+
+.tabs {
+  margin-bottom: var(--spacing-16);
+}
+
+.cmp-tabs {
+  overflow: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-y: hidden;
+  border-bottom: 1px solid;
+  gap: var(--spacing-8);
+  padding: 2px var(--spacing-16) 0 var(--spacing-16);
+}
+
+.cmp-tabs__tablist {
+  overflow: auto;
+  flex-wrap: nowrap;
+  overflow-y: hidden;
+  border-bottom: 1px solid;
+  gap: var(--spacing-8);
+  padding: 2px var(--spacing-16) 0 var(--spacing-16);
+}
+
+.cmp-tabs__tab {
+  padding: var(--spacing-12) var(--spacing-16);
+  position: relative;
+  display: flex;
+  gap: var(--spacing-4);
+  align-items: center;
+  background-color: var(--color-purple-50);
+  color: var(--black-color);
+  border-radius: 5px 5px 0 0;
+}
+
+.cmp-tabs__tab-title {
+  width: max-content;
+}
+
+i::before {
+  position: relative;
+  top: -2px;
+}
+
+.cmp-tabs__tab[aria-disabled="true"] {
+  pointer-events: none;
+  color: var(--color-grey-600);
+}
+
+.cmp-tabs__tab--active {
+  background-color: var(--system-color-link-visited);
+  color: var(--system-white);
+  border-bottom: none;
+  position: relative;
+}
+
+.cmp-tabs__tab:hover {
+  background-color: var(--system-color-link-hover);
+}
+
+.cmp-tabs__tab:hover i::before,
+.cmp-tabs__tab:hover .cmp-tabs__tab-title {
+  color: var(--white-color);
+}
+
+.cmp-tabs__tabpanel {
+  transform: translateY(5px);
+  overflow: hidden;
+  visibility: hidden;
+  display: block;
+  height: 0;
+  opacity: 0;
+  transition: all 0.5s linear;
+}
+
+.cmp-tabs__tabpanel--active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+}
+
+.cmp-rounded-tabs--light .cmp-tabs__tab {
+  background-color: var(--color-purple-50);
+}
+
+.cmp-rounded-tabs--dark .cmp-tabs__tab {
+  background-color: var(--color-dark-purple-200);
+  color: var(--white-color);
+}
+
+.cmp-rounded-tabs--dark .cmp-tabs__tab:hover {
+  background-color: var(--system-color-link-dark-hover);
+}
+
+.cmp-rounded-tabs--dark .cmp-tabs__tab:hover i::before,
+.cmp-rounded-tabs--dark .cmp-tabs__tab:hover .cmp-tabs__tab-title {
+  color: var(--black-color);
+}
+
+.cmp-rounded-tabs--dark .cmp-tabs__tab[aria-disabled="true"] {
+  color: var(--color-grey-500);
+}
+
+.cmp-rounded-tabs--dark .cmp-tabs__tab--active {
+  background-color: var(--system-color-link-dark-visited);
+  color: var(--black-color);
+}
+
+.cmp-indicator-tabs--light .cmp-tabs__tab {
+  background-color: transparent;
+}
+
+.cmp-indicator-tabs--dark .cmp-tabs__tab {
+  background-color: transparent;
+}
+
+.cmp-tabs--hide-title .cmp-tabs__tab-title {
+  display: none;
+}
+
+.cmp-tabs--center .cmp-tabs__tablist {
+  display: flex;
+  justify-content: center;
+}
+
+/* Example media query, adjust values for real breakpoints */
+@media (max-width: 768px) {
+  .cmp-tabs--center .cmp-tabs__tablist {
+    justify-content: flex-start;
+  }
+}

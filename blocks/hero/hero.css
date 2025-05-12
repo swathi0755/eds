@@ -1,0 +1,54 @@
+.cmp-teaser__container {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.cmp-image-teaser {
+  display: flex;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: auto;
+}
+
+.cmp-teaser__content {
+  justify-content: center;
+  padding: 48px;
+}
+
+.cmp-teaser__pretitle,
+.cmp-teaser__description > p {
+  font-size: 16px; /* Adjust as necessary */
+  line-height: 138%;
+  color: black; /* Set text color to black */
+}
+
+.cmp-teaser__pretitle,
+.cmp-teaser__description > p,
+.cmp-teaser__title {
+  margin-bottom: 4px;
+  margin-top: 0;
+}
+
+.cmp-teaser__button-container {
+  display: flex;
+}
+
+.cmp-teaser__button-container .button {
+  margin: 16px 0;
+  margin-right: 8px;
+  background-color: #007bff; /* Primary button color */
+  color: white; /* Button text color */
+  padding: 12px 24px; /* Button padding */
+  border-radius: 4px; /* Button border radius */
+  text-decoration: none; /* Remove underline */
+}
+
+.cmp-teaser__button-container .button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.cmp-teaser__image img {
+  width: 100%;
+  height: auto;
+}

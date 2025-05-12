@@ -1,0 +1,37 @@
+.cmp-list {
+  padding: 16px 0;
+}
+
+.cmp-list ul {
+  list-style-type: disc; /* Default for unordered lists */
+  margin: 0;
+  padding: 0;
+}
+
+.cmp-list ul ul {
+  list-style-type: lower-alpha; /* 2nd level lists */
+}
+
+.cmp-list ul ul ul {
+  list-style-type: decimal; /* 3rd level lists */
+}
+
+.cmp-list li {
+  color: black; /* Set font color to black */
+}
+
+.cmp-list .cmp-date {
+  margin: 0 6px;
+}
+
+/* Light Theme */
+.cmp-list--light-theme {
+  background-color: white;
+  color: black;
+}
+
+/* Dark Theme */
+.cmp-list--dark-theme {
+  background-color: #333; /* Dark gray */
+  color: white;
+}

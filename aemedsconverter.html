@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="url"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.file-upload {
+    margin-bottom: 15px;
+}
+
+.add-button {
+    background: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+.add-button:hover {
+    background: #0056b3;
+}
+
+.convert-button {
+    background: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.convert-button:hover {
+    background: #218838;
+}
+
+.download-button {
+    background: #0069d9;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.download-button:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+    input[type="url"],
+    input[type="text"],
+    select {
+        padding: 8px;
+    }
+}
+</style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AEM To EDS Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AEM To EDS Converter</h1>
+
+        <form>
+            <label for="edsLink">EDS Document Link:</label>
+            <input type="url" id="edsLink" placeholder="Enter EDS Document URL" required>
+
+            <label for="extractionMode">Mode of HTML Extraction</label>
+            <select id="extractionMode" required>
+                <option value="automated">Automated</option>
+                <option value="manual">Manual</option>
+            </select>
+
+            <label for="aemComponent">Choose AEM Component:</label>
+            <select id="aemComponent" required>
+                <option value="">Select Component</option>
+                <option value="component1">Component 1</option>
+                <option value="component2">Component 2</option>
+            </select>
+
+            <label for="edsDocument">Select EDS document:</label>
+            <input type="text" id="edsDocument" placeholder="Enter EDS Document URL">
+
+            <div class="file-upload">
+                <label for="jsFiles">JS Files:</label>
+                <input type="text" id="jsFiles" placeholder="Enter JS Files">
+                <button type="button" class="add-button">+ Add</button>
+            </div>
+
+            <div class="file-upload">
+                <label for="cssFiles">CSS Files:</label>
+                <input type="text" id="cssFiles" placeholder="Enter CSS Files">
+                <button type="button" class="add-button">+ Add</button>
+            </div>
+
+            <button type="submit" class="convert-button">Convert to EDS</button>
+        </form>
+
+        <button class="download-button">Download EDS Blocks</button>
+    </div>
+</body>
+</html>
